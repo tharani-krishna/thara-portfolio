@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tharani Krishna — AI / ML Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header id="header" class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="logo">Tharani Krishna</h1>
+        <p class="tag">AI / ML • Generative AI • Automation</p>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <p class="greeting">Hello, I'm</p>
+          <h2 class="name">Tharani Krishna</h2>
+          <p class="role">Aspiring AI/ML Engineer • Generative AI Specialist</p>
+          <p class="lead">I build practical AI solutions — chatbots, vision systems and automation pipelines.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="tharani_krishna_ats_resume.pdf" download>Download Resume</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="profile-card">
+            <img src="images/profile.jpg" alt="Tharani Krishna" class="profile-img" loading="eager" onerror="this.src='images/placeholder.png'">
+            <div class="profile-meta">
+              <h3>Tharani Krishna</h3>
+              <p>Information Technology — SNS College of Engineering</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section dark">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div id="projects-grid" class="projects-grid" aria-live="polite">
+          <!-- JS injected cards -->
+        </div>
+
+        <div class="center" style="margin-top:20px;">
+          <a class="btn primary" href="https://github.com/tharani-krishna" target="_blank" rel="noopener noreferrer">View All on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <div class="about-card card">
+          <h2>About Me</h2>
+          <p><strong>Career Objective:</strong> Aspiring AI/ML Engineer with hands-on experience in Generative AI, automation, and intelligent system development. Experienced in Python, OpenAI, Streamlit and low-code integrations (n8n).</p>
+          <p><strong>Education:</strong> B.Tech (Information Technology), SNS College of Engineering, Coimbatore (2023–2027).</p>
+
+          <h3>Experience Highlights</h3>
+          <ul>
+            <li>Gen AI Intern — RETECH SOLUTIONS (Prompt engineering, automation)</li>
+            <li>Web Dev Intern — WEBGEN (Responsive front-end & deployments)</li>
+            <li>Software Intern — INTERNPE (Python tooling, API integration)</li>
+          </ul>
+        </div>
+
+        <aside class="skills-card card">
+          <h3>Skills & Tools</h3>
+          <ul class="skills-list">
+            <li>Python • Streamlit • OpenAI</li>
+            <li>n8n • Agentic AI • Databricks</li>
+            <li>SQL • Data Viz • Excel</li>
+            <li>Figma • Git • Linux</li>
+          </ul>
+
+          <h3>Certifications</h3>
+          <ul>
+            <li>AWS – Generative AI Essentials</li>
+            <li>Databricks – ML & GenAI Fundamentals</li>
+            <li>PrepInsta – DSA & Aptitude</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section dark">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+          <div class="contact-card card">
+            <p>I'm open for internships and project collaborations. Reach out via email or LinkedIn.</p>
+            <p><strong>Email:</strong> <a href="mailto:tharanikrishna2006@gmail.com">tharanikrishna2006@gmail.com</a></p>
+            <p class="socials">
+              <a href="https://www.linkedin.com/in/tharani-krishna-sns/" target="_blank" rel="noopener">LinkedIn</a> •
+              <a href="https://github.com/tharani-krishna" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+
+          <form id="contact-form" class="contact-form card" aria-label="Contact form">
+            <label>Name<input type="text" id="name" required></label>
+            <label>Email<input type="email" id="email" required></label>
+            <label>Message<textarea id="message" rows="5" required></textarea></label>
+            <div class="form-row" style="display:flex;align-items:center;gap:12px;">
+              <button class="btn primary" type="submit">Send Message</button>
+              <p id="form-msg" class="form-msg" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> Tharani Krishna — Built with HTML, CSS & JavaScript</small>
+    </div>
+  </footer>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Inline JS (lazy-load, render projects, modal, form) -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // set current year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Projects data (13 projects) — filenames must match images/
+    const projects = [
+      { id: 'p1', title: 'AI Chatbot Assistant', desc: 'Conversational assistant using Streamlit & OpenAI.', img: 'images/project-1-neon.png', github: '#', live: '#' },
+      { id: 'p2', title: 'Image Caption Generator', desc: 'CNN + LSTM image captioning system.', img: 'images/project-2-neon.png', github: '#', live: '#' },
+      { id: 'p3', title: 'Resume Analyzer', desc: 'NLP tool to evaluate ATS compatibility.', img: 'images/project-3-neon.png', github: '#', live: '#' },
+      { id: 'p4', title: 'Music Genre Classifier', desc: 'Predicts genres using MFCC features & ML.', img: 'images/project-4-neon.png', github: '#', live: '#' },
+      { id: 'p5', title: 'Disease Prediction App', desc: 'Predicts disease risk from user inputs using ML.', img: 'images/project-5-neon.png', github: '#', live: '#' },
+      { id: 'p6', title: 'Stock Price Predictor', desc: 'LSTM based forecasting, visualized on Streamlit.', img: 'images/project-6-neon.png', github: '#', live: '#' },
+      { id: 'p7', title: 'Sentiment Analysis Dashboard', desc: 'Transformer-based sentiment analysis with dashboard.', img: 'images/project-7-neon.png', github: '#', live: '#' },
+      { id: 'p8', title: 'Face Emotion Detector', desc: 'Realtime emotion classification from images/webcam.', img: 'images/project-8-neon.png', github: '#', live: '#' },
+      { id: 'p9', title: 'Real Estate Price Predictor', desc: 'Regression model for housing price prediction.', img: 'images/project-9-neon.png', github: '#', live: '#' },
+      { id: 'p10', title: 'AI Text Summarizer', desc: 'Transformer-based summarizer for long content.', img: 'images/project-10-neon.png', github: '#', live: '#' },
+      { id: 'p11', title: 'Dietary Map', desc: 'Diet planning app for patients.', img: 'images/project-11-neon.png', github: '#', live: '#' },
+      { id: 'p12', title: 'Weather Sensor (IoT)', desc: 'IoT sensor with low-code dashboard integration.', img: 'images/project-12-neon.png', github: '#', live: '#' },
+      { id: 'p13', title: 'Agri Doctor', desc: 'Crop disease detection and treatment suggestions.', img: 'images/project-13-neon.png', github: '#', live: '#' }
+    ];
+
+    // render projects
+    const grid = document.getElementById('projects-grid');
+    if (grid) {
+      projects.forEach(p => {
+        const el = document.createElement('article');
+        el.className = 'project';
+        el.innerHTML = `
+          <div class="thumb">
+            <img data-src="${p.img}" src="images/placeholder.png" alt="${p.title}">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">${p.title}</h3>
+            <p class="project-desc">${p.desc}</p>
+            <div class="project-actions">
+              <button class="btn primary view" data-id="${p.id}">View</button>
+              <a class="btn ghost" href="${p.github}" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        `;
+        grid.appendChild(el);
+      });
+    }
+
+    // lazy load images using IntersectionObserver
+    const lazyImgs = document.querySelectorAll('img[data-src]');
+    if ('IntersectionObserver' in window) {
+      const imgObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            obs.unobserve(img);
+          }
+        });
+      }, { rootMargin: "200px 0px" });
+      lazyImgs.forEach(i => imgObserver.observe(i));
+    } else {
+      // fallback load
+      lazyImgs.forEach(i => { i.src = i.dataset.src; i.removeAttribute('data-src'); });
+    }
+
+    // modal logic (delegated)
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.getElementById('modal-close');
+
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target.matches('.view')) {
+        const id = target.dataset.id;
+        const project = projects.find(p => p.id === id);
+        if (!project) return;
+        modalContent.innerHTML = `
+          <h2 style="margin-top:0;color:#fff">${project.title}</h2>
+          <img src="${project.img}" alt="${project.title}" onerror="this.src='images/placeholder.png'">
+          <p style="color:#c7d7df">${project.desc}</p>
+          <div style="margin-top:12px">
+            <a class="btn primary" href="${project.github}" target="_blank">View Code</a>
+            ${project.live && project.live !== '#' ? `<a class="btn ghost" href="${project.live}" target="_blank">Live Demo</a>` : ''}
+          </div>
+        `;
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    closeBtn?.addEventListener('click', () => {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = 'auto';
+    });
+
+    // close on backdrop click
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // contact form (client-side demo)
+    const form = document.getElementById('contact-form');
+    const msg = document.getElementById('form-msg');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg.textContent = 'Thanks! Your message was received (demo).';
+      form.reset();
+      setTimeout(() => { msg.textContent = ''; }, 5000);
+    });
+
+    // simple reveal animations
+    const cards = document.querySelectorAll('.project, .card, .profile-card');
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) en.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(c => reveal.observe(c));
+  });
+  </script>
+</body>
+</html>
